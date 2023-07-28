@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>UQTĐ Sneaker Shop</title>
+	<link rel="stylesheet" href="./CSS/styles.css" />
+	<link rel="stylesheet" href="./CSS/home1.css">
+	<link rel="stylesheet" href="./CSS/home2.css">
+	<link rel="stylesheet" href="./css/slideshow.css">
+	<link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+		integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<!-- IE -->
+	<link rel="shortcut icon" type="image/x-icon" href="./img/icon_logo/icon.png" />
+</head>
+
+<body>
+	<header>
+		<div class="container-hero">
+			<div class="container hero">
+				<div class="customer-support">
+					<i class="fa-solid fa-headset"></i>
+					<div class="content-customer-support">
+						<span class="text">Số hotline</span>
+						<span class="number" style="color: black;"><a href="tel:+84937209687">0937209687</a> - <a
+								href="tel:+84862591757">0862591757</a></span>
+					</div>
+				</div>
+
+				<div class="container-logo">
+					<a href="/index.html">
+						<img src="./img/icon_logo/logo.png" alt="" width="160px" height="90px">
+					</a>
+				</div>
+
+				<div class="container-user">
+					<a href="./source/dangnhap.html"><i class="fa-solid fa-user"></i></a>
+					<a href=""><i class="fa-solid fa-basket-shopping"></i></a>
+					<div class="content-shopping-cart">
+						<span class="text">Giỏ hàng</span>
+						<span class="number">(0)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-navbar">
+			<nav class="navbar container">
+				<ul id="main-menu">
+					<li><a href="./index.html">Trang chủ</a></li>
+					<li><a href="./source/gioithieu.html">Giới thiệu</a></li>
+					<li><a href="source/sanpham.html">Sản phẩm</a></li>
+					<li><a href="./source/baiviet.html">Bài viết</a></li>
+					<li><a href="./source/danhgia.html">Đánh giá</a></li>
+					<li><a href="">Liên hệ</a>
+						<ul class="sub-menu">
+							<li><a href="./source/hoidap.html">Hỏi đáp</a></li>
+							<li><a href="./source/lienhe.html">Hotline</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- icons -->
+				<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+				<script>
+					$(document).ready(function () {
+						// tìm tất cả các li có sub-menu và thêm vào nó class has-child
+						$('.sub-menu').parent('li').addClass('has-child');
+					});
+				</script>
+				<div class="nav-bar">
+					<div class="darkLight-searchBox">
+						<div class="dark-light"></div>
+
+						<div class="searchBox">
+							<div class="searchToggle">
+								<i class='bx bx-x cancel'></i>
+								<i class='bx bx-search search'></i>
+							</div>
+
+							<div class="search-field">
+								<input type="text" placeholder="Search...">
+								<i class='bx bx-search'></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+					const body = document.querySelector("body"),
+						nav = document.querySelector("nav"),
+						modeToggle = document.querySelector(".dark-light"),
+						searchToggle = document.querySelector(".searchToggle"),
+						sidebarOpen = document.querySelector(".sidebarOpen"),
+						siderbarClose = document.querySelector(".siderbarClose");
+
+					let getMode = localStorage.getItem("mode");
+					if (getMode && getMode === "dark-mode") {
+						body.classList.add("dark");
+					}
+
+					// js code to toggle dark and light mode
+					modeToggle.addEventListener("click", () => {
+						modeToggle.classList.toggle("active");
+						body.classList.toggle("dark");
+
+						// js code to keep user selected mode even page refresh or file reopen
+						if (!body.classList.contains("dark")) {
+							localStorage.setItem("mode", "light-mode");
+						} else {
+							localStorage.setItem("mode", "dark-mode");
+						}
+					});
+
+					// js code to toggle search box
+					searchToggle.addEventListener("click", () => {
+						searchToggle.classList.toggle("active");
+					});
+
+
+					//   js code to toggle sidebar
+					sidebarOpen.addEventListener("click", () => {
+						nav.classList.add("active");
+					});
+
+					body.addEventListener("click", e => {
+						let clickedElm = e.target;
+
+						if (!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")) {
+							nav.classList.remove("active");
+						}
+					});
+				</script>
+			</nav>
+		</div>
+	</header>
+
+	<section class="banner">
+		<div class="content-banner">
+			<p>UQTĐ</p>
+			<h2>Sneaker<br />Shop</h2>
+			<a href="#"><strong>Xem các mặt hàng</strong></a>
+		</div>
+	</section>
+
+	<main class="main-content">
+		<section class="container container-features">
+			<div class="card-feature">
+				<i class="fa-solid fa-plane-up"></i>
+				<div class="feature-content">
+					<span>Miễn phí vận chuyển</span>
+					<p>Cho đơn hàng gồm 2 đôi trở lên</p>
+				</div>
+			</div>
+			<div class="card-feature">
+				<i class="fa-solid fa-wallet"></i>
+				<div class="feature-content">
+					<span>Thanh toán</span>
+					<p>Bằng thẻ, chuyển khoản, tiền mặt</p>
+				</div>
+			</div>
+			<div class="card-feature">
+				<i class="fa-solid fa-gift"></i>
+				<div class="feature-content">
+					<span>Voucher khuyến mãi đặc biệt</span>
+					<p>Voucher giảm đến 50% giá trị sản phẩm</p>
+				</div>
+			</div>
+			<div class="card-feature">
+				<i class="fa-solid fa-headset"></i>
+				<div class="feature-content">
+					<span>Dịch vụ khách hàng 24/7</span>
+					<p>Liên hệ qua email hoặc số điện thoại</p>
+				</div>
+			</div>
+		</section>
+		<section class="slider owl-carousel owl-theme">
+			<a href="./index1.html">
+				<div class="slider-item slider-item-one">
+
+				</div>
+			</a>
+			<a href="./source/adidas.html">
+				<div class="slider-item slider-item-two">
+
+				</div>
+			</a>
+			<a href="./source/newbalance.html">
+				<div class="slider-item slider-item-three">
+
+				</div>
+			</a>
+			<a href="./source/lv.html">
+				<div class="slider-item slider-item-four">
+
+				</div>
+			</a>
+			<a href="./source/nike.html">
+				<div class="slider-item slider-item-five">
+
+				</div>
+			</a>
+			<a href="./source/converse.html">
+				<div class="slider-item slider-item-six">
+
+				</div>
+			</a>
+			<a href="./source/mlb.html">
+				<div class="slider-item slider-item-seven">
+
+				</div>
+			</a>
+		</section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+		<script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$(".owl-carousel").owlCarousel();
+			});
+			$('.owl-carousel').owlCarousel({
+				loop: true,
+				margin: 10,
+				nav: true,
+				autoplay: true,
+				autoplayTimeout: 5000,
+				responsive: {
+					0: {
+						items: 1
+					},
+					600: {
+						items: 1
+					},
+					1000: {
+						items: 1
+					}
+				}
+			})
+		</script>
+		<h1 id="bestseller" style="text-align: center;">Best Seller</h1>
+		<iframe src="./source/bestseller.html" frameborder="0" width="100%" height="500px"></iframe>
+	</main>
+	<main>
+		<h1
+			style="font-size: 30px; color: brown; background-color: #a2fae8; padding: 20px; border-radius: 30px; text-align: center;">
+			Các tin nóng gần đây</h1>
+		<br>
+		<div class="container1">
+			<div class="article">
+				<img src="./img/sanpham/giay-hot-trend.jpg" alt="Article 1">
+				<h2>Tiêu đề bài đăng 1</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptatum, atque provident commodi
+					delectus cum natus nobis consequatur magnam quod at, ex inventore aliquid dolores. Assumenda aliquid
+					quasi magnam amet!</p>
+				<a href="#">Đọc thêm</a>
+			</div>
+			<div class="article">
+				<img src="./img/sanpham/giay-hot-trend-2.jpg" alt="Article 2">
+				<h2>Tiêu đề bài đăng 2</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis doloribus numquam
+					perspiciatis iure quod hic blanditiis deleniti reiciendis voluptas aperiam totam placeat adipisci
+					libero necessitatibus, rerum fugiat enim dolor.</p>
+				<a href="#">Đọc thêm</a>
+			</div>
+			<div class="article">
+				<img src="./img/sanpham/giay-hot-trend-3.jpg" alt="Article 3">
+				<h2>Tiêu đề bài đăng 3</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero dicta dolores, repellendus
+					quo aspernatur eveniet! Illum quaerat qui, distinctio quidem id atque, voluptatibus expedita sed
+					repudiandae, voluptate rerum saepe.</p>
+				<a href="#">Đọc thêm</a>
+			</div>
+		</div>
+	</main>
+	<button id="scrollToTopBtn"><img src="./img/icon_logo/17507.png" alt="" width="100%"></button>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+			window.addEventListener("scroll", function () {
+				if (window.pageYOffset > 100) {
+					scrollToTopBtn.classList.add("show");
+				} else {
+					scrollToTopBtn.classList.remove("show");
+				}
+			});
+
+			scrollToTopBtn.addEventListener("click", function () {
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth"
+				});
+			});
+		});
+	</script>
+	<div class="zalo-chat-widget" data-oaid="4556033722125219052" data-welcome-message="Rất vui khi được hỗ trợ bạn!"
+		data-autopopup="0" data-width="350" data-height="420" style="margin-right: -50px;"></div>
+	<script src="https://sp.zalo.me/plugins/sdk.js"></script>
+
+	<footer class="footer">
+		<div class="container container-footer">
+			<div class="menu-footer">
+				<div class="contact-info">
+					<p class="title-footer">Thông tin liên lạc</p>
+					<ul>
+						<li>
+							Địa chỉ: 102/4, đường Phạm Văn Chiêu, Phường 9, Quận Gò Vấp
+						</li>
+						<li>Hotline: <br><a href="tel:+84937209687">0937209687</a> - <a
+								href="tel:+84862591757">0862591757</a></li>
+						<li>EmaiL: <br> <a href="mailto:Sneakershop-UQTĐ@gmail.com">Sneakershop-UQTĐ@gmail.com</a></li>
+					</ul>
+					<div class="social-icons">
+						<span class="facebook">
+							<a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+						</span>
+						<span class="twitter">
+							<a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+						</span>
+						<span class="youtube">
+							<a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+						</span>
+						<span class="pinterest">
+							<a href="https://pinterest.com"><i class="fa-brands fa-pinterest-p"></i></a>
+						</span>
+						<span class="instagram">
+							<a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+						</span>
+					</div>
+				</div>
+
+				<div class="information">
+					<p class="title-footer">Thông tin</p>
+					<ul>
+						<li><a href="./source/gioithieu.html">Về chúng tôi</a></li>
+						<li><a href="#">Thông tin giao hàng</a></li>
+						<li><a href="#">Chính sách bảo mật</a></li>
+						<li><a href="#">Điều khoản và điều kiện</a></li>
+						<li><a href="./source/contact.html">Liên hệ</a></li>
+					</ul>
+				</div>
+
+				<div class="my-account">
+					<p class="title-footer">Tài khoản của tôi</p>
+					<ul>
+						<li><a href="./source/dangnhap.html">Đăng nhập/Đăng kí</a></li>
+						<li><a href="#">Giỏ hàng</a></li>
+					</ul>
+				</div>
+
+				<div class="newsletter">
+					<p class="title-footer">Tin tức</p>
+
+					<div class="content">
+						<p>
+							Đăng ký nhận bản tin của chúng tôi ngay bây giờ và luôn cập nhật Ngày với các bộ sưu tập mới
+							và ưu đãi độc quyền.
+						</p>
+						<input type="email" placeholder="Nhập email tại đây...">
+						<a href=""><button>Đăng ký</button></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="copyright">
+				<p>
+					Được phát triển bởi nhóm UQTĐ của FPT school &copy; 2023
+				</p>
+
+				<img src="./img/icon_logo/payment.png" alt="Pagos">
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

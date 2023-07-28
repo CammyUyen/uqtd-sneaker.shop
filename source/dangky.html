@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icon_logo/icon.png" />
+    <style>
+        body {
+            padding-top: 80px;
+            font-family: Arial, sans-serif;
+            background-image: url('../img/banner/background-banner-blue-nhieu-hinh-dang.jpg');
+        }
+
+        .container {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            background-color: rgb(181, 225, 236);
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        input[type="submit"] {
+            width: 101%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: red;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .social-icons {
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .social-icons img {
+            margin: 0 10px;
+            box-shadow: 0 0 20px 0 #7f7f7f3d;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        p {
+            text-align: center;
+            padding: 2px;
+        }
+        button {
+            margin-top: 15px;
+            margin-left: 50px;
+            width: 300px;
+            padding: 8px;
+            border-radius: 30px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        button[type="button"] {
+            background-color: #36b8f4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="button"]:hover {
+            background-color: #d8972f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Đăng ký</h2>
+        <div class="social-icons">
+            <a href="https://facebook.com"><img src="../img/icon_logo/Facebook_Logo_(2019).png" alt="" width="30px"></a>
+            <a href="https://google.com"><img src="../img/icon_logo/Google.png" alt="" width="38px"></a>
+            <a href="https://twitter.com"><img src="../img/icon_logo/Twitter.png" alt="" width="30px"></a>
+        </div>
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Tên đăng nhập">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <input type="submit" value="Đăng ký">
+            <button type="button" onclick="resetForm()">Reset</button>
+        </form>
+        <p>Đã có tài khoản - <a href="./dangnhap.html">Đăng nhập</a></p>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Lưu thông tin đăng ký vào localStorage
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            alert("Đăng ký thành công!");
+            window.location.href = "dangnhap.html";
+        });
+    </script>
+    <script>
+        function resetForm() {
+            document.getElementById("registerForm").reset();
+        }
+    </script>
+</body>
+
+</html>

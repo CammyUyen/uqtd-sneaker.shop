@@ -1,0 +1,95 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: white;
+    background-size: cover;
+    background-position-y: -100px;
+}
+#header{
+    background-color: rgb(148, 137, 217);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+#main-menu {
+    display: flex;
+    list-style: none;
+    margin: 7px;
+    padding: 12px;
+    font-size: 15px;
+}
+#main-menu li {
+    position: relative;
+}
+#main-menu li a {
+    color: white;
+    display: block;
+    padding: 16px 30px;
+    text-decoration: none;
+}
+#main-menu ul.sub-menu {
+    position: absolute;
+    background-color: rgba(127, 193, 235, 0.909);
+    padding: 15px 0px;
+    list-style: none;
+    width: 200px;
+    border-bottom: 1px solid gray;
+    display: none;
+}
+#main-menu li:hover>ul.sub-menu {
+    display: block;
+}
+#main-menu ul.sub-menu a {
+    padding: 8px 15px;
+    border-bottom: 1px solid gray;
+    font-weight: 500;
+}
+#main-menu ul.sub-menu li:hover a {
+    border-bottom: 1px solid gray;
+}
+#main-menu ul.sub-menu li:last-child a {
+    border: none;
+}
+
+/* Thiết lập border khi hover */
+#main-menu>li>a {
+    position: relative;
+}
+#main-menu>li>a::before {
+    content: "";
+    height: 4px;
+    width: 0px;
+    background: rgb(37, 69, 106);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#main-menu>li:hover>a::before {
+    width: 100%;
+}
+#main-menu>li.has-child::after {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f107";
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 18px 0px;
+}
+#main-menu .sub-menu li:hover a {
+    color: rgb(0, 74, 173);
+    font-weight: 1000;
+}
+/* footer */
+footer {
+  display: block;
+  background-color: gray;
+  color: white;
+  font-family: mulid boid;
+}

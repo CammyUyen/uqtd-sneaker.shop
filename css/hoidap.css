@@ -1,0 +1,52 @@
+.hoidap .row {
+    align-items: center;
+}
+
+.hoidap .row form {
+
+    padding: 10px 45px;
+    box-shadow: 3px 4px rgba(0, 0, 0, .1);
+    border: 3px solid rgba(0, 0, 0, .1);
+    background: none;
+    border-radius: 30px;
+}
+
+#img {
+    width: 75%;
+    margin-left: 100px;
+    height: auto;
+}
+
+.hoidap .row form .box {
+    padding: 10px;
+    font-size: 17px;
+    color: #333;
+    text-transform: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    margin: 7px 0;
+    width: 100%;
+}
+
+button {
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 12px 48px;
+    border-radius: 50px;
+    background-color: rgb(65, 141, 255);
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(118, 118, 231);
+}
+
+.hoidap .row form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.hoidap {
+    padding-left: 70px;
+}
